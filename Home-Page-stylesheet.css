@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFDD0;
+    accent-color: hotpink;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 400px auto;
+    grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "hero hero"
+    "featured-products featured-products";
+}
+
+#hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    min-height: 550px;
+
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url("images/cake-with-pink-background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#bg-image {
+    grid-area: bg-image;
+    width: 100vw;
+    height: 100%;
+
+}
+
+#featured-products {
+    grid-area: featured-products;
+}
+
+footer {
+    grid-area: footer;
+}
