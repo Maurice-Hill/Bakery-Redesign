@@ -6,10 +6,13 @@
     <meta name="author" content="Maurice">
     <title>Bakery Home Page</title>
     <link rel="stylesheet" href="Home-Page-stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Carmen The Baker</h1>
+        <span id="wordmark">Carmen <strong>The Baker</strong></span>
 
         <nav>
             <ul>
@@ -19,36 +22,53 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <button id="call-button">Call Now</button>
     </header>
 
     <main>
 
         <section id="hero">
             <div class="hero-content">
-                <h1>Cuppatude</h1>
+                <h1>Carmen's Bakery</h1>
                 <p>Freshly crafted treats for every celebration</p>
-                <button>Explore Our Menu</button>
+                <button id="hero-button">Explore Our Menu</button>
             </div>
         </section>
+        
         <section id="featured-products">
-            <a href="">
+            
+
+            <div class="featured-product-wrapper">
+                <a href="">
                 <img src="images/cake-with-pink-background.jpg" alt="First featured product">
             </a> 
 
-             <a href="">
+            <span>Cherry Cake</span>
+            </div>
+
+             <div class="featured-product-wrapper">
+                <a href="">
                 <img src="images/cake-with-pink-background.jpg" alt="Second featured product">
             </a> 
 
-             <a href="">
+            <span>Blue Cake</span>
+            </div>
+
+             <div class="featured-product-wrapper">
+                <a href="">
                 <img src="images/cake-with-pink-background.jpg" alt="Third featured product">
             </a> 
+
+            <span>Green Cake</span>
+            </div>
         </section>
     </main>
 
     <footer id="global-footer">
-        <span> +1 206 555 0100</span>
-
-        <span>Crown Point, IN</span>
+        <span>+1 206 555 0100</span>
+        <span>Location: Crown Point, IN</span>
+        <span>Hours: xx:xx-xx:xx</span>
         <a href="">Facebook</a>
     </footer>
 </body>
