@@ -292,3 +292,9 @@ footer a:hover, footer a:focus-visible {
     color: var(--color-accent-strong);
 
 }
+
+.footer-phone-wrapper,.footer-location-wrapper,.footer-hours-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

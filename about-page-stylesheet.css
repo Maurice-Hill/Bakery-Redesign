@@ -1,0 +1,10 @@
+#my-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "pic-1 description-1"
+    "description-2 pic-2";
+
+    gap: 1.5rem;
+}
