@@ -1,10 +1,65 @@
+
+
+#about-introduction {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    background-color: var(--color-primary);
+    margin-bottom: 0;
+    padding: 3rem 6%;
+    color: var(--color-accent-light);
+
+}
+
 #my-story {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "pic-1 description-1"
-    "description-2 pic-2";
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    gap: 3rem;
+    margin-inline:auto;
+    padding: 4rem 6%;
+    background-color: var(--color-accent-strong);
+    color: var(--color-background);
+    
+    border-top: 2px solid var(--color-accent-light);
+}
 
+#my-story p {
+    font-family: 'Lato', Helvetica, sans-serif;
+    font-size: clamp(0.9rem,2vw,1.55rem);
+    width: 75%;
+    line-height: 1.7;
+    margin-left: 1.5rem;
+
+}
+
+#my-story p {
+    margin-bottom: 1.5rem;
+}
+
+#my-story p:last-child {
+    margin-bottom: 0;
+}
+
+.my-story-images {
+    display: grid;
     gap: 1.5rem;
+    align-content: start;
+}
+
+.my-story-images img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+@media (max-width:712px) {
+
+     #my-story {
+        grid-template-columns: 1fr;
+     }
+
+     .my-story-images {
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr;
+     }
 }
