@@ -52,7 +52,7 @@
     border-radius: 1rem;
 }
 
-@media (max-width:712px) {
+@media (max-width:770px) {
 
      #my-story {
         grid-template-columns: 1fr;
