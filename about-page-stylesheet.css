@@ -19,7 +19,6 @@
     background-color: var(--color-accent-strong);
     color: var(--color-background);
     
-    border-top: 2px solid var(--color-accent-light);
 }
 
 #my-story p {

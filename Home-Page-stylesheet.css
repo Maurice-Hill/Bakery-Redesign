@@ -12,7 +12,7 @@ main {
     grid-template-rows: 1fr;
 
     min-height: clamp(17.2rem,45vw,50rem);
-    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url("images/cake-with-pink-background.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url("images/owner-wide-shot.jpg");
     background-size: cover;
     
     background-position: center;
