@@ -35,7 +35,6 @@ main {
     align-items: center;
     text-align: center;
     color: white;
-    font-family: 'Playfair Display', Georgia, serif;
 }
 
 
@@ -44,8 +43,9 @@ main {
     line-height: 1.1;
 }
 
-.hero-content p {
+.hero-content span {
     font-size: clamp(0.9rem,2vw,1.55rem);
+    font-family: var(--font-heading);
 }
 
 
@@ -58,7 +58,7 @@ main {
 
     background-color: var(--color-primary);
     padding: 4rem 6%;
-    font-family: 'Lato', Helvetica, sans-serif;
+    font-family: var(--font-body);
   
 }
 

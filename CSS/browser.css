@@ -1,10 +1,8 @@
-ul {
-    text-decoration: none;
-    list-style-type: none;
-}
 
 nav {
-    margin-left: 1.7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 nav a {
@@ -17,9 +15,7 @@ nav a {
     margin-top: 2.5rem;
 }
 
-.categoryGroupsContainer > :not(h3) {
-    justify-content: center;
-}
+
 
 .categoryGroup {
     padding-bottom: 1.5rem;
@@ -57,6 +53,20 @@ nav a {
 
 }
 
+.itemInfo  {
+    padding: 6% 0.75rem;
+}
+
+.itemInfo * {
+    font-family: var(--font-body);
+    padding-left: 6%;
+    font-size: 1.3rem;
+}
+
+.priceAvailability {
+    
+}
+
 .item img  {
     object-fit: cover;
     width: 100%;
@@ -83,5 +93,7 @@ nav a {
 
     gap: 1rem
 }
+
+
 
 }
