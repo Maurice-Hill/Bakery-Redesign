@@ -1,0 +1,73 @@
+main {
+    display: grid;
+    grid-template-areas: "productIntroduction productIntroduction"
+    "mainInteractable minorProductInfo";
+}
+
+.productIntroduction {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    grid-area:productIntroduction ;
+    
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.productIntroduction span {
+    color: var(--color-accent);
+}
+
+.mainInteractable {
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    grid-area:mainInteractable ; 
+
+    padding: 2rem 6%;
+
+}
+
+.mainInteractable img {
+    object-fit: cover;
+    border-radius: 2rem;
+    width: 100;
+    aspect-ratio: 4/3;
+    flex-shrink: 1;
+}
+
+.mainInteractable button {
+
+    border-radius: 999px;
+    background-color: var(--color-accent-light);
+    border: transparent;
+
+    padding: 2%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+.mainInteractable button:hover,.mainInteractable button:focus-visible {
+
+    background-color: var(--color-accent);
+}
+
+.mainInteractable button:active {
+
+    filter: brightness(0.77);
+    transform: scale(0.97);
+}
+
+.minorProductInfo {
+    grid-area: minorProductInfo;
+
+}
+
+.primaryProductData {
+    margin-bottom: 1.5rem;
+}
+
+.primaryProductData span {
+    color: gray;
+}
