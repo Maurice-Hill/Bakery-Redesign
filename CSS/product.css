@@ -1,73 +1,218 @@
+
+:root {
+    --font-size-h1: clamp(2.5rem, 6vw, 4rem);
+    --font-size-h2: clamp(2rem, 5vw, 3.5rem);
+    --font-size-h3: clamp(1.4rem, 4vw, 2.9rem);
+    --font-size-h4: clamp(1rem, 2vw, 2rem);
+    --font-size-body: clamp(0.9rem, 1.2vw, 1.4rem);
+}
+
+/* General layout */
+
+body {
+    font-size: var(--font-size-body);
+}
+
+header {
+    background-color: var(--color-accent-light);
+}
+
 main {
     display: grid;
-    grid-template-areas: "productIntroduction productIntroduction"
-    "mainInteractable minorProductInfo";
+    grid-template-areas: "mainProductInfo minorProductInfo";
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+
+    .mainProductInfo {
+        grid-area: mainProductInfo;
+    }
+
+    .minorProductInfo {
+        grid-area: minorProductInfo;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.productIntroduction {
-    display: flex;
-    align-items: center;
+/* Typography */
 
-    justify-content: space-between;
-    grid-area:productIntroduction ;
-    
-    padding-left: 6%;
-    padding-right: 6%;
+h1, h2, h3, h4, p {
+    margin: 0;
 }
 
-.productIntroduction span {
-    color: var(--color-accent);
+h2 {
+    font-size: var(--font-size-h2);
 }
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+/* Main product image and interaction */
 
 .mainInteractable {
     display: flex;
     flex-direction: column;
-    gap:2rem;
-    grid-area:mainInteractable ; 
-
+    gap: 2rem;
     padding: 2rem 6%;
 
+    img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 2rem;
+        box-shadow: 4px 8px 4px rgb(128, 125, 125);
+    }
+
+    button {
+        padding: 2%;
+        border: transparent;
+        border-radius: 999px;
+        background-color: var(--color-accent);
+        cursor: pointer;
+
+        font-size: 1.5rem;
+        letter-spacing: 0.05rem;
+
+        transition:
+            background-color 0.3s ease,
+            transform 0.3s ease,
+            filter 0.3s ease;
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--color-accent-light);
+        }
+
+        &:active {
+            filter: brightness(0.77);
+            transform: scale(0.97);
+        }
+    }
 }
 
-.mainInteractable img {
-    object-fit: cover;
-    border-radius: 2rem;
-    width: 100;
-    aspect-ratio: 4/3;
-    flex-shrink: 1;
+/* Product introduction */
+
+.productIntroduction {
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 3%;
+    padding-inline: 6%;
+
+    .productName {
+        font-size: var(--font-size-h3);
+    }
+
+    .availabilityStatus {
+        padding-inline-start: 2%;
+        color: var(--color-accent);
+        font-family: var(--font-heading);
+        font-size: var(--font-size-h4);
+    }
 }
 
-.mainInteractable button {
-
-    border-radius: 999px;
-    background-color: var(--color-accent-light);
-    border: transparent;
-
-    padding: 2%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
-}
-
-.mainInteractable button:hover,.mainInteractable button:focus-visible {
-
-    background-color: var(--color-accent);
-}
-
-.mainInteractable button:active {
-
-    filter: brightness(0.77);
-    transform: scale(0.97);
-}
-
-.minorProductInfo {
-    grid-area: minorProductInfo;
-
-}
+/* Primary product information */
 
 .primaryProductData {
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem;
+    padding-inline: 6%;
+
+    .productPrice {
+        margin-block: 3%;
+        margin-inline-end: 4%;
+        font-size: var(--font-size-h4);
+    }
+
+    .productWarning {
+        margin-inline-end: 4%;
+        color: gray;
+        font-size: var(--font-size-body);
+    }
 }
 
-.primaryProductData span {
-    color: gray;
+/* Product details */
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+
+    summary {
+        display: flex;
+        justify-content: space-between;
+
+        padding-inline: 3%;
+        padding-block-end: 3%;
+        border-block-end: 2px solid var(--color-accent);
+
+        background-color: transparent;
+        color: var(--color-primary);
+        font-size: var(--font-size-h3);
+        text-align: center;
+
+        list-style: none;
+        cursor: pointer;
+
+        transition: background-color 0.3s ease;
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--color-accent);
+        }
+
+        &::after {
+            content: '+';
+        }
+    }
+
+    details[open] summary::after {
+        content: '−';
+    }
+
+    .productCustomization,
+    .productLimitations,
+    .productDescription-wrapper {
+        padding: 0.5rem 6%;
+    }
+
+    .customizationGroup {
+        margin-block-start: 3%;
+    }
+
+    .limitationGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+
+        padding-block: 1rem;
+        border-block-end: 1px solid var(--color-accent-light);
+
+        &:last-child {
+            border-block-end: none;
+        }
+
+        h4 {
+            margin-block-end: clamp(0.7rem, 1vw, 2rem);
+        }
+
+        p {
+            margin-block-end: clamp(1rem, 2vw, 3rem);
+        }
+    }
+
+    .productDescription-wrapper {
+        p + p {
+            margin-block-start: 1rem;
+        }
+    }
+}
+
+/* Responsive layout */
+
+@media (max-width: 630px) {
+    main {
+        grid-template-areas:
+            "mainProductInfo"
+            "minorProductInfo";
+
+        grid-template-columns: 1fr;
+    }
 }

@@ -46,6 +46,7 @@ main {
 .hero-content span {
     font-size: clamp(0.9rem,2vw,1.55rem);
     font-family: var(--font-heading);
+    opacity: 87%;
 }
 
 
