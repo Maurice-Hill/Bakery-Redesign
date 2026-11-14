@@ -4,12 +4,10 @@
     box-sizing: border-box;
 }
 
-dialog {
-    display: block;
-}
+
 
 .inquiryModal {
-    display: grid;
+    display: none;
 
     grid-template-areas: 
     "inquiryHeading"
@@ -36,6 +34,10 @@ dialog {
 
     padding: 2rem;
     margin:auto;
+
+    &[open] {
+        display: grid;
+    }
 
     .inquiryIntroduction {
         margin-block-end: 1rem;
@@ -132,7 +134,7 @@ dialog {
 
         .quantityWrapper input {
 
-            width: min(30%,60px);
+            width: clamp(90px,15%,130px);
             height: min(30%,40px);
             display: inline;
         }
