@@ -1,0 +1,185 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+dialog {
+    display: block;
+}
+
+.inquiryModal {
+    display: grid;
+
+    grid-template-areas: 
+    "inquiryHeading"
+    "inquiryDisplay  "
+    "inquiryInputs "
+    "inquirySubmit ";
+    grid-template-rows: auto 1fr auto;
+
+    
+
+    border: 1px transparent;
+
+    box-shadow: 0 12px 40px rgb(0 0 0 / 12%);
+
+    font-family: inherit;
+    background-color: var(--color-secondary);
+
+    color: var(--color-accent);
+    border-radius: 1.5rem;
+
+    height: fit-content;
+    width: clamp(200px,63.6vw, 900px);
+    max-width: none;
+
+    padding: 2rem;
+    margin:auto;
+
+    .inquiryIntroduction {
+        margin-block-end: 1rem;
+
+        h3 {
+            margin-block-end: 0.4rem;
+
+        }
+
+        span {
+            font-size: 0.9rem;
+            color: var(--color-accent-light);
+            opacity: 90%;
+        }
+    }
+
+
+    .inquiryDisplay {
+        display: flex;
+        flex-direction: column;
+        grid-area: inquiryDisplay;
+
+
+        padding-block-end: 1.5rem;
+        border-block-end: 1px solid var(--color-accent);
+
+        h4 {
+            margin-block-end: 0.5rem;
+        }
+
+
+        select {
+            font: inherit;
+            border-radius: 0.65rem;
+            border: none;
+            padding: 0.5rem;
+            margin-bottom: 0.4rem;
+
+        }
+
+        span {
+            font-size: 0.80rem;
+            font-weight: 300;
+            color: var(--color-accent-light);
+            opacity: 90%;
+        }
+    }
+
+    .inquiryInputs {
+        grid-area: inquiryInputs;
+
+     display: flex;
+        flex-direction: column;
+
+        gap: 1.25rem;
+
+
+        .descriptionWrapper {
+            display: flex;
+            flex-direction: column;
+            margin-block-start: 4%;
+
+            gap: 0.5rem;
+
+            padding: 0.5rem;
+
+        }
+
+      .quantityWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            font-size: var(--font-size-h4);
+            height: fit-content;
+    
+        }
+        
+                .descriptionWrapper label, .quantityWrapper label {
+            font-size: var(--font-size-h4);
+            font-weight: 600;
+        }
+
+        .descriptionWrapper textarea,.quantityWrapper input {
+            font-family: inherit;
+            font: inherit;
+            border-radius: 0.65rem;
+            padding: 1em;
+            border: none;
+            width: 100%;
+
+
+        }
+
+        .quantityWrapper input {
+
+            width: min(30%,60px);
+            height: min(30%,40px);
+            display: inline;
+        }
+
+
+
+    }
+
+
+
+    button {
+
+        grid-area: inquirySubmit;
+
+        border-radius: 999px;
+        border: none;
+        padding: 0.75rem 1.5em;
+
+        font-size: var(--font-size-h4);
+        font-weight: 600;
+
+
+        background-color: var(--color-accent);
+        color: var(--color-primary);
+
+        cursor: pointer;
+
+        width: fit-content;
+
+        margin-inline-start: auto;
+
+               transition:
+            background-color 0.3s ease,
+            transform 0.3s ease,
+            filter 0.3s ease;
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--color-accent-light);
+        }
+
+        &:active {
+            filter: brightness(0.77);
+            transform: scale(0.97);
+        }
+    }
+}
+
+
+
